@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-08-19
+  description: MyString
+  value: 
+  method: 1
+  file: MyText
+  semester_student: one
+
+two:
+  date: 2017-08-19
+  description: MyString
+  value: 
+  method: 1
+  file: MyText
+  semester_student: two

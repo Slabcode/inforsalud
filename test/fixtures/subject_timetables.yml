@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  period: MyString
+  subject: one
+  timetable: one
+
+two:
+  year: MyString
+  period: MyString
+  subject: two
+  timetable: two

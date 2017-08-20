@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: MyString
+  duration: MyString
+  working_day: one
+
+two:
+  time: MyString
+  duration: MyString
+  working_day: two

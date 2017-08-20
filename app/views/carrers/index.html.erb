@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carrers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Semester number</th>
+      <th>Objective</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carrers.each do |carrer| %>
+      <tr>
+        <td><%= carrer.name %></td>
+        <td><%= carrer.description %></td>
+        <td><%= carrer.semester_number %></td>
+        <td><%= carrer.objective %></td>
+        <td><%= link_to 'Show', carrer %></td>
+        <td><%= link_to 'Edit', edit_carrer_path(carrer) %></td>
+        <td><%= link_to 'Destroy', carrer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carrer', new_carrer_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  period: 1
+  passed: false
+  payment: false
+  carrer_student: one
+  semester: one
+
+two:
+  year: MyString
+  period: 1
+  passed: false
+  payment: false
+  carrer_student: two
+  semester: two

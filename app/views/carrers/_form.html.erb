@@ -1,0 +1,37 @@
+<%= form_with(model: carrer, local: true) do |form| %>
+  <% if carrer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carrer.errors.count, "error") %> prohibited this carrer from being saved:</h2>
+
+      <ul>
+      <% carrer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :carrer_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :carrer_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semester_number %>
+    <%= form.number_field :semester_number, id: :carrer_semester_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :objective %>
+    <%= form.text_area :objective, id: :carrer_objective %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

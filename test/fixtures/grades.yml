@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade_one: 
+  grade_two: 
+  grade_three: 
+  semester_student_subject: one
+
+two:
+  grade_one: 
+  grade_two: 
+  grade_three: 
+  semester_student_subject: two

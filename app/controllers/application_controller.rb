@@ -9,6 +9,15 @@ class ApplicationController < ActionController::Base
     if resource_name == :admin
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:name,:lastname])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name,:lastname])
+    elsif resource_name == :user
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:name,:lastname,:mobile,:avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name,:lastname,:mobile,:avatar])
+    elsif resource_name == :partner
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:lastname])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name,:lastname])
+    else
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:name,:lastname,:mobile,:avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name,:lastname,:mobile,:avatar])
     end
   end
 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @carrer.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @carrer.description %>
+</p>
+
+<p>
+  <strong>Semester number:</strong>
+  <%= @carrer.semester_number %>
+</p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= @carrer.objective %>
+</p>
+
+<%= link_to 'Edit', edit_carrer_path(@carrer) %> |
+<%= link_to 'Back', carrers_path %>
