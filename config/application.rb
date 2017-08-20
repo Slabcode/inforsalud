@@ -14,5 +14,13 @@ module Inforsalud
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    I18n.available_locales = [:es]
+
+    # Set default locale to something other than :en
+    I18n.default_locale = :es
+
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = :local # Or :utc
   end
 end
