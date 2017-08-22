@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  professor_subject: one
+  semester_subject: one
+  poll: false
+
+two:
+  professor_subject: two
+  semester_subject: two
+  poll: false

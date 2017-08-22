@@ -1,0 +1,11 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+<h1><%= t("global.back") %> </h1>
+
+
+<%= t("admins.attributes.name") %>  <%= @admin.name %>
+<%= t("admins.attributes.lastname") %> <%= @admin.lastname %>
+<%= t("admins.attributes.username") %> <%= @admin.username %>
+<%= t("admins.attributes.email") %> <%= @admin.email %>
+<%= link_to t("global.back"), dashboard_path %>

@@ -1,0 +1,22 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+<h1>Este es el panel de administrador</h1>
+<%= link_to t("admins.new"), new_admin_path %>
+<%= link_to t("admins.index"), admins_path %>
+
+
+<%= link_to t("administrator.home"), root_path %>
+<%= link_to t("administrator.franchise"), franchises_path %>
+<%= link_to 'Carreras', carrers_path %>
+
+
+
+<%= link_to t("administrator.sign_out"), destroy_admin_session_path, method: :delete %>
+<%= link_to t("administrator.edit"), edit_admin_registration_path(current_admin) %>
+
+<% if !current_admin.authy_enabled %>
+  <%= link_to t("administrator.two_factor_enable"), admin_enable_authy_path %>
+<% else %>
+  <%= link_to t("administrator.two_factor_disable"), admin_disable_authy_path, method: :post %>
+<% end %>

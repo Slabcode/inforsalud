@@ -1,0 +1,23 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+<h1><%= t("admins.index") %></h1>
+<%= link_to t("admins.new"), new_admin_path %>
+
+<% @admins.each do |a| %>
+  <p>
+    <%= t("admins.attributes.name") %>  <%= a.name %>
+    <%= t("admins.attributes.lastname") %> <%= a.lastname %>
+    <%= t("admins.attributes.username") %> <%= a.username %>
+    <%= t("admins.attributes.email") %> <%= a.email %>
+    <%= link_to t("admins.show"), a %>
+    <% if current_admin.id != a.id %>
+      <%= link_to t("admins.delete"), a, method: :delete %>
+    <% end %>
+  </p>
+<% end  %>
+
+<%= link_to t("global.back"), dashboard_path  %>
+
+
+<%= render 'paginate' %>

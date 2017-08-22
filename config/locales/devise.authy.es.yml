@@ -1,0 +1,24 @@
+es:
+  devise:
+    submit_token: 'Comprobar token'
+    submit_token_title: 'Por favor ingrese el token de autenticidad:'
+    authy_register_title: 'Habilitar la autenticacion de dos factores'
+    enable_authy: 'Habilitar'
+    cellphone: 'Entre el numero telefonico'
+    country: 'Entre la ciudad'
+    request_sms: 'Solicitar el SMS'
+    request_phone_call: 'Solicitar la llamada telefonica'
+    remember_device: 'Recordar el dispositivo'
+
+    authy_verify_installation_title: 'Verificar la cuenta'
+    enable_my_account: 'Habilitar la cuenta'
+
+    devise_authy:
+      admin:
+        enabled: 'Verificacion de dos pasados, fue habilitada'
+        not_enabled: 'Hubo un error mientras intetabamos habilitar la verificacion de dos pasos'
+        disabled: 'Verificacion de dos pasos ha sido deshabilitada'
+        not_disabled: 'Hubo un error mientras intentabamos deshabilitar la verificaion de dos pasos'
+        signed_in: 'Inicion de sesion exitoso.'
+        already_enabled: 'Verificacion de dos pasos, ya se encuentra habilitada.'
+        invalid_token: 'El token ingresado es invalido.'

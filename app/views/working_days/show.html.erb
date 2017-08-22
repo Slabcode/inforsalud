@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @working_day.day %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @working_day.time %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @working_day.description %>
+</p>
+
+<%= link_to 'Edit', edit_working_day_path(@working_day) %> |
+<%= link_to 'Back', working_days_path %>
