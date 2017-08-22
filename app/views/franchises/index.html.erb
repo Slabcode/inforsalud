@@ -18,6 +18,8 @@
         <td><%= franchise.name %></td>
         <td><%= franchise.address %></td>
         <td><%= franchise.description %></td>
+        <td><%= link_to 'Mostrar carreras', show_carrers_franchise_path(franchise) %></td>
+        <td><%= link_to 'Enlazar carrera', link_carrer_franchise_path(franchise) %></td>
         <td><%= link_to 'Show', franchise %></td>
         <td><%= link_to 'Edit', edit_franchise_path(franchise) %></td>
         <td><%= link_to 'Destroy', franchise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +30,7 @@
 
 <br>
 
+<%= render 'paginate' %>
+
 <%= link_to 'New Franchise', new_franchise_path %>
+<%= link_to 'Dashboard', dashboard_path %>

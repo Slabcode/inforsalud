@@ -1,10 +1,11 @@
 class SemestersController < ApplicationController
   before_action :set_semester, only: [:show, :edit, :update, :destroy]
+  before_action :set_carrer, only: [:new,:create]
 
   # GET /semesters
   # GET /semesters.json
   def index
-    @semesters = Semester.all
+    @semesters = Semester.load_semesters(page: params[:page],per_page: params[:per_page],carrer: params[:carrer_id])
   end
 
   # GET /semesters/1
@@ -25,7 +26,7 @@ class SemestersController < ApplicationController
   # POST /semesters.json
   def create
     @semester = Semester.new(semester_params)
-
+    @semester.carrer_id = @carrer.id
     respond_to do |format|
       if @semester.save
         format.html { redirect_to @semester, notice: 'Semester was successfully created.' }
@@ -67,8 +68,12 @@ class SemestersController < ApplicationController
       @semester = Semester.find(params[:id])
     end
 
+    def set_carrer
+      @carrer = Carrer.find(params[:carrer_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def semester_params
-      params.require(:semester).permit(:name, :description, :carrer_id)
+      params.require(:semester).permit(:name, :description, :number)
     end
 end

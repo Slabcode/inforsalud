@@ -1,10 +1,11 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :set_semester, only: [:new,:create]
 
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = Subject.load_subjects(page: params[:page],per_page: params[:per_page],semester: params[:semester_id])
   end
 
   # GET /subjects/1
@@ -25,6 +26,7 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
+    @subject.semester_id = @semester.id
 
     respond_to do |format|
       if @subject.save
@@ -67,8 +69,13 @@ class SubjectsController < ApplicationController
       @subject = Subject.find(params[:id])
     end
 
+
+    def set_semester
+      @semester = Semester.find(params[:semester_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:name, :code, :description, :semester_id)
+      params.require(:subject).permit(:name, :code, :description)
     end
 end

@@ -4,7 +4,7 @@ class CarrersController < ApplicationController
   # GET /carrers
   # GET /carrers.json
   def index
-    @carrers = Carrer.all
+    @carrers = Carrer.load_carrers(page: params[:page],per_page: params[:per_page])
   end
 
   # GET /carrers/1
@@ -69,6 +69,6 @@ class CarrersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carrer_params
-      params.require(:carrer).permit(:name, :description, :semester_number, :objective)
+      params.require(:carrer).permit(:name, :description, :semester_number, :objective,:graduated_profile)
     end
 end

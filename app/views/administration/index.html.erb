@@ -7,6 +7,10 @@
 
 
 <%= link_to t("administrator.home"), root_path %>
+<%= link_to t("administrator.franchise"), franchises_path %>
+<%= link_to 'Carreras', carrers_path %>
+
+
 
 <%= link_to t("administrator.sign_out"), destroy_admin_session_path, method: :delete %>
 <%= link_to t("administrator.edit"), edit_admin_registration_path(current_admin) %>

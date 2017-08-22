@@ -20,6 +20,7 @@ es:
       username: Nombre de usuario
       email: Correo electronico
   administrator:
+    franchise: Franquicias
     home: Home
     sign_out: Cerrar session
     edit: Editar perfil

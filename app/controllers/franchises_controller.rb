@@ -1,10 +1,10 @@
 class FranchisesController < ApplicationController
-  before_action :set_franchise, only: [:show, :edit, :update, :destroy]
+  before_action :set_franchise, only: [:show, :edit, :update, :destroy,:link_carrer,:link,:show_carrers]
 
   # GET /franchises
   # GET /franchises.json
   def index
-    @franchises = Franchise.all
+    @franchises = Franchise.load_franchises(paga: params[:page],per_page: params[:per_page])
   end
 
   # GET /franchises/1
@@ -59,6 +59,34 @@ class FranchisesController < ApplicationController
       format.html { redirect_to franchises_url, notice: 'Franchise was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def link_carrer
+    @carrers = Carrer.all
+  end
+
+  def link
+    respond_to do |format|
+      if CarrerFranchise.add(params[:carrer],@franchise.id)
+        format.html {redirect_to franchises_url,notice: "Hemos asociado la carrera exitosamente"}
+        format.json { head :no_content  }
+      else
+        format.html {redirect_to franchises_url,notice: "No hemos podido asociado la carrera exitosamente"}
+        format.json { head :no_content  }
+      end
+    end
+  end
+
+  def unlink
+    CarrerFranchise.remove(params[:carrer_id],params[:franchise_id])
+    respond_to do |format|
+      format.html {redirect_to show_carrers_franchise_path(params[:franchise_id]), notice: "Hemos desenlazado la carrera exitosamente"}
+      format.json { head :no_content  }
+    end
+  end
+
+  def show_carrers
+    @carrers = Carrer.by_franchise(id: params[:id],page: params[:page],per_page: params[:per_page])
   end
 
   private

@@ -5,6 +5,7 @@ class CreateCarrers < ActiveRecord::Migration[5.1]
       t.text :description, null: false, default: ""
       t.integer :semester_number, null: false, default: 1
       t.text :objective, null: false, default: ""
+      t.text :graduated_profile, null: false, default: ""
 
       t.timestamps
     end

@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
 
-  resources :subjects
+  resources :subjects, except: [:new,:create,:index]
   resources :working_days
-  resources :semesters
-  resources :carrers
-  resources :franchises
+  resources :semesters, except: [:new,:create,:index] do
+    resources :subjects, only: [:new,:create,:index]
+  end
+  resources :carrers do
+    resources :semesters, only: [:new,:create,:index]
+  end
+  resources :franchises do
+    member do
+      get 'link-carrer', to: "franchises#link_carrer"
+      post 'link', to: "franchises#link"
+      get 'show-carrers', to: "franchises#show_carrers"
+    end
+  end
+
+  resources :franchises, only: [] do
+    resources :carrers, only: [] do
+      delete 'unlink', to: "franchises#unlink"
+    end
+  end
   resources :settings
   devise_for :admins, :skip => [:registrations]
   devise_for :professors, :skip => [:registrations]

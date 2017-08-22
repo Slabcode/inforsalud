@@ -9,7 +9,7 @@ class Admin < ApplicationRecord
   validates_length_of :username, minimum: 6
   validates_length_of :name, :lastname, in: 3..50
 
-  def self.load_admins(args)
+  def self.load_admins(**args)
     all.paginate(page: args[:page] || 1, per_page: args[:per_page] || 10)
   end
 

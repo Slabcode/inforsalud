@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170820013411) do
   end
 
   create_table "attendeces", force: :cascade do |t|
-    t.date "day", default: "2017-08-19", null: false
+    t.date "day", default: "2017-08-21", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170820013411) do
     t.bigint "carrer_working_day_id"
     t.bigint "user_id"
     t.integer "state", default: 0, null: false
-    t.date "start", default: "2017-08-19", null: false
+    t.date "start", default: "2017-08-21", null: false
     t.date "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170820013411) do
     t.text "description", default: "", null: false
     t.integer "semester_number", default: 1, null: false
     t.text "objective", default: "", null: false
+    t.text "graduated_profile", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,4 @@
-<%= form_with(model: semester, local: true) do |form| %>
+<%= form_with(model: semester,url: carrer_semesters_path(@carrer), local: true) do |form| %>
   <% if semester.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(semester.errors.count, "error") %> prohibited this semester from being saved:</h2>
@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :carrer_id %>
-    <%= form.text_field :carrer_id, id: :semester_carrer_id %>
+    <%= form.label :number %>
+    <%= form.number_field :number, id: :semester_number %>
   </div>
 
   <div class="actions">
