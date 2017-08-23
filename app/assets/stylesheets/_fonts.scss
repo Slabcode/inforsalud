@@ -23,6 +23,18 @@
 }
 
 @font-face {
+  font-family: 'Lato-Light';
+  src: asset-url('Lato-Light.eot');
+  src: asset-url('Lato-Light.woff2') format('woff2'),
+       asset-url('Lato-Light.woff') format('woff'),
+       asset-url('Lato-Light.ttf') format('truetype'),
+       asset-url('Lato-Light.svg#Lato-Light') format('svg'),
+       asset-url('Lato-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Lato-Regular';
   src: asset-url('Lato-Regular.eot');
   src: asset-url('Lato-Regular.woff2') format('woff2'),

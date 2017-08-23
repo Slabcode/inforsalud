@@ -1,3 +1,143 @@
-// Place all the styles related to the admins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "fonts";
+@import "mixin";
+@import "variables";
+
+body{
+	color: #333;
+	margin: 0;
+}
+
+.main{
+	position: relative;
+	text-align: center;
+	.login{
+		display: inline-block;
+		padding: 100px 0;
+		position: relative;
+		width: 35%;
+		.logo{
+			display: inline-block;
+			position: relative;
+			width: 140px;
+		}
+		.title{
+			color: #333;
+			font-family: $font-LatoB;
+			font-size: 27px;
+		}
+		.new_admin, .authy-form{
+			margin-bottom: 20px;
+			padding: 0 12%;
+			.form-content{
+				display: block;
+				position: relative;
+				text-align: center;
+				legend{
+					border: none;
+					display: block;
+					font-family: $font-LatoL;
+					font-size: 16px;
+					margin: 0;
+					padding-bottom: 5px;
+				}
+				.authy-token{
+					border: 1px solid #d1d1d1;
+					display: inline-block !important;
+					font-size: 15px;
+					padding: 5px 10px 5px 30px !important;
+					width: 100%;
+				}			
+				.gadget{
+					margin: 0;
+					.remember{
+						display: inline-block;
+						margin: 20px 0 0;
+						padding: 0;
+						width: 50%;
+						input{
+							width: auto;
+						}
+						label{
+							span{
+								font-family: $font-LatoL;
+								font-size: 15px;
+								font-weight: normal;
+							}
+						}
+					}
+					.actions{
+						margin-top: 14px;
+						padding: 0;
+						width: 50%;
+						.sms{
+							padding: 7px 20px;
+							width: 80%;
+						}
+					}
+				}
+			}
+			.field{
+				display: block;
+				margin: 15px 0 0;
+				position: relative;
+				text-align: center;
+				input{
+					display: inline-block;
+					font-family: $font-Lato;
+					font-size: 15px;
+					padding: 4px 10px;
+					width: 90%;
+				}
+			}
+			.remember{
+				display: inline-block;
+				margin: 20px 0 0;
+				text-align: left;
+				width: 48%;
+				input{
+					width: auto;
+				}
+				label{
+					font-family: $font-Lato;
+					font-size: 14px;
+				}
+			}
+			.actions{
+				display: inline-block;
+				margin: 15px 0 0;
+				width: 47.5%;
+				input, a{
+					cursor: pointer;
+					background-color: #5cb85c;
+					border: none;
+					border-radius: 3px;
+					color: #fff;
+					display: inline-block;
+					font-family: $font-Lato;
+					font-size: 15px;
+					padding: 10px 25px;
+					width: 100%;
+					@include transition(all 0.2s ease-in-out);
+					&:hover, &:focus, &:active{
+						background-color: #4c954c;
+						outline: none;
+						text-decoration: none;
+					}
+				}
+				.sms{
+					background-color: #337ab7;
+					&:hover, &:focus, &:active{
+						background-color: #3490e0;
+					}
+				}
+			}
+			.token{
+				margin-top: 25px;
+			}
+		}
+		a{
+			font-family: $font-Lato;
+			font-size: 14px;
+		}
+	}
+}
