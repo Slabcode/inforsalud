@@ -1,6 +1,11 @@
-<% if notice %>
-  <%= notice %>
-<% end %>
-<h1><%= t("admins.new") %></h1>
+<%= stylesheet_link_tag 'admins', media: 'all', type:"text/css" %>
 
-<%= render 'form', admin: @admin %>
+<section class="main">
+	<div class="registration">
+		<div class="logo">
+			<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+		</div>
+		<h2 class="title"><%= t("admins.new") %></h2>
+		<%= render 'form', admin: @admin %>
+	</div>
+</section>

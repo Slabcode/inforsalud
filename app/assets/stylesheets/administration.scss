@@ -1,3 +1,72 @@
-// Place all the styles related to the administration controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "fonts";
+@import "mixin";
+@import "variables";
+
+body{
+	color: #333;
+	font-family: $font-Lato;
+	margin: 0;
+}
+
+.alert{
+	padding: 0;
+	z-index: 100;
+}
+.home, .sign_out{
+	display: inline-block;
+	font-family: $font-Lato;
+	font-size: 15px;
+	padding: 10px 25px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.sign_out{
+	left: unset;
+	right: 10px;
+}
+.dashboard{
+	margin-top: 100px;
+	position: relative;
+	text-align: center;
+	.items{
+		display: inline-block;
+		margin: 25px;
+		position: relative;
+		text-align: center;
+		width: 80%;
+		.action{
+			border: 1px solid #444;
+			border-right: none;
+			padding: 0;
+			.item{
+				color: #333;
+				display: block;
+				font-family: $font-Lato;
+				font-size: 17px;
+				padding: 30px 10px;
+				text-align: center;
+				@include transition(all 0.25s ease-in-out);
+				i{
+					display: block;
+					font-size: 25px;
+					margin-bottom: 10px;
+				}
+				&:hover, &:focus, &:active{
+					background-color: #d1d1d1;
+					outline: none;
+					text-decoration: none;
+				}
+			}
+			&:nth-child(2n){
+				background-color: #f3f3f3;
+			}
+			&:first-child, &:nth-child(2), &:nth-child(3){
+				border-bottom: none;
+			}
+			&:nth-child(3), &:last-child{
+				border-right: 1px solid #444;
+			}
+		}
+	}	
+}
