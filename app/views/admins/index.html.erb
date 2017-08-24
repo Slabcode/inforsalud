@@ -1,5 +1,9 @@
 <%= stylesheet_link_tag 'admins', media: 'all', type:"text/css" %>
 
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
+<% end %>
+
 <section class="home_admins">
 	<div class="logo">
 		<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>

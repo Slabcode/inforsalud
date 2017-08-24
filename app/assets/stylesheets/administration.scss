@@ -12,6 +12,7 @@ body{
 	padding: 0;
 	z-index: 100;
 }
+
 .home, .sign_out{
 	display: inline-block;
 	font-family: $font-Lato;
@@ -20,7 +21,13 @@ body{
 	position: absolute;
 	left: 10px;
 	top: 10px;
+	z-index: 50;
+	&:hover, &:active, &:focus{
+		outline: none;
+		text-decoration: none;
+	}
 }
+
 .sign_out{
 	left: unset;
 	right: 10px;

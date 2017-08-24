@@ -7,6 +7,21 @@ body{
 	margin: 0;
 }
 
+.home{
+	display: inline-block;
+	font-family: $font-Lato;
+	font-size: 15px;
+	padding: 10px 25px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 50;
+	&:hover, &:active, &:focus{
+		outline: none;
+		text-decoration: none;
+	}
+}
+
 .main{
 	position: relative;
 	text-align: center;
