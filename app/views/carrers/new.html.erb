@@ -1,5 +1,15 @@
-<h1>New Carrer</h1>
+<%= stylesheet_link_tag 'carrers', media: 'all', type:"text/css" %>
 
-<%= render 'form', carrer: @carrer %>
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
+<% end %>
 
-<%= link_to 'Back', carrers_path %>
+<section class="main">
+	<div class="registration">
+		<div class="logo">
+			<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+		</div>
+		<h2 class="title">Nueva Carrera</h2>
+		<%= render 'form', carrer: @carrer %>
+	</div>
+</section>

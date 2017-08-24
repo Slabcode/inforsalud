@@ -1,19 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'franchises', media: 'all', type:"text/css" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @franchise.name %>
-</p>
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
+<% end %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @franchise.address %>
-</p>
+<section class="main">
+	<div class="show_franchises">
+		<div class="logo">
+			<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+		</div>
+		<h2 class="title">Franquicia</h2>
+		<div class="info">
+			<p>
+				<strong>Name:</strong>
+				<%= @franchise.name %>
+			</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @franchise.description %>
-</p>
+			<p>
+				<strong>Address:</strong>
+				<%= @franchise.address %>
+			</p>
 
-<%= link_to 'Edit', edit_franchise_path(@franchise) %> |
-<%= link_to 'Back', franchises_path %>
+			<p>
+				<strong>Description:</strong>
+				<%= @franchise.description %>
+			</p>
+			<div class="show_actions">
+				<%= link_to icon('pencil-square-o') + ' Edit', edit_franchise_path(@franchise), :class => "edit_franchise" %>
+				<%= link_to icon('long-arrow-left') + ' Back', franchises_path, :class => "back" %>
+			</div>
+		</div>
+	</div>
+</section>
+

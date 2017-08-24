@@ -1,6 +1,5 @@
-<% if notice %>
-  <%= notice %>
-<% end %>
+<%= stylesheet_link_tag 'admins', media: 'all', type:"text/css" %>
+
 <h1><%= t("global.back") %> </h1>
 
 
@@ -9,3 +8,4 @@
 <%= t("admins.attributes.username") %> <%= @admin.username %>
 <%= t("admins.attributes.email") %> <%= @admin.email %>
 <%= link_to t("global.back"), dashboard_path %>
+

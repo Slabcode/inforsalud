@@ -1,24 +1,40 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'carrers', media: 'all', type:"text/css" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @carrer.name %>
-</p>
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @carrer.description %>
-</p>
-
-<p>
-  <strong>Semester number:</strong>
-  <%= @carrer.semester_number %>
-</p>
-
-<p>
-  <strong>Objective:</strong>
-  <%= @carrer.objective %>
-</p>
-
-<%= link_to 'Edit', edit_carrer_path(@carrer) %> |
-<%= link_to 'Back', carrers_path %>
+<section class="main">
+	<div class="show_career">
+		<div class="logo">
+			<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+		</div>
+		<h2 class="title">Carrera</h2>
+		<div class="info">
+			<p>
+				<strong>Name:</strong>
+				<%= @carrer.name %>
+			</p>
+			<p>
+				<strong>Description:</strong>
+				<%= @carrer.description %>
+			</p>
+			<p>
+				<strong>Graduated Profile:</strong>
+				<%= @carrer.graduated_profile %>
+			</p>
+			<p>
+				<strong>Semester number::</strong>
+				<%= @carrer.semester_number %>
+			</p>
+			<p>
+				<strong>Objective:</strong>
+				<%= @carrer.objective %>
+			</p>
+			<div class="show_actions">
+				<%= link_to icon('pencil-square-o') + ' Edit', edit_carrer_path(@carrer), :class => "edit_franchise" %>
+				<%= link_to icon('long-arrow-left') + ' Back', carrers_path, :class => "back" %>
+			</div>
+		</div>
+	</div>
+</section>

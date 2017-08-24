@@ -1,6 +1,16 @@
-<h1>Editing Franchise</h1>
+<%= stylesheet_link_tag 'franchises', media: 'all', type:"text/css" %>
 
-<%= render 'form', franchise: @franchise %>
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
+<% end %>
 
-<%= link_to 'Show', @franchise %> |
-<%= link_to 'Back', franchises_path %>
+<section class="main">
+	<div class="registration">
+		<div class="logo">
+			<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+		</div>
+		<h2 class="title">Editar Franquicia</h2>
+		<%= render 'form', franchise: @franchise %>
+	</div>
+</section>
+

@@ -1,3 +1,350 @@
-// Place all the styles related to the Carrers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "fonts";
+@import "mixin";
+@import "variables";
+
+body{
+	color: #333;
+	margin: 0;
+}
+
+.home{
+	display: inline-block;
+	font-family: $font-Lato;
+	font-size: 15px;
+	padding: 10px 25px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 50;
+	&:hover, &:active, &:focus{
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+.main{
+	position: relative;
+	text-align: center;
+	.show_career, .registration, .edit{
+		display: inline-block;
+		padding: 100px 0;
+		position: relative;
+		width: 60%;
+		.logo{
+			display: inline-block;
+			position: relative;
+			width: 140px;
+		}
+		.title{
+			color: #333;
+			font-family: $font-LatoB;
+			font-size: 27px;
+		}
+		.new_career{
+			margin-bottom: 20px;
+			padding: 0 15%;
+			.field{
+				display: block;
+				margin: 15px 0 0;
+				position: relative;
+				text-align: left;
+				label{
+					font-family: $font-Lato;
+					font-size: 15px;
+				}
+				input{
+					display: inline-block;
+					font-family: $font-Lato;
+					font-size: 15px;
+					padding: 4px 10px;
+					width: 100%;
+				}
+				textarea{
+					border: 1px solid #d1d1d1;
+					font-family: $font-Lato;
+					font-size: 15px;
+					padding: 5px 10px;
+					resize: none;
+					width: 100%;
+				}
+			}
+			.actions{
+				display: inline-block;
+				margin: 15px 0 0;
+				width: 47.5%;
+				input, a{
+					cursor: pointer;
+					background-color: #5cb85c;
+					border: none;
+					border-radius: 3px;
+					color: #fff;
+					display: inline-block;
+					font-family: $font-Lato;
+					font-size: 15px;
+					padding: 10px 25px;
+					width: 100%;
+					@include transition(all 0.2s ease-in-out);
+					&:hover, &:focus, &:active{
+						background-color: #4c954c;
+						outline: none;
+						text-decoration: none;
+					}
+				}
+				.sms{
+					background-color: #337ab7;
+					&:hover, &:focus, &:active{
+						background-color: #3490e0;
+					}
+				}
+			}
+			.token{
+				margin-top: 25px;
+			}
+		}
+		.info{
+			padding: 20px 0;
+			text-align: center;
+			p{
+				font-family: $font-Lato;
+				font-size: 15px;
+				margin-bottom: 15px;
+				text-align: left;
+				strong{
+					margin-right: 5px;
+				}
+			}
+			.show_actions{
+				margin-top: 20px;
+				.edit_franchise, .back{
+					background-color: #337ab7;
+					border: 1px solid #2e6da4;
+					border-radius: 3px;
+					color: #fff;
+					display: inline-block;
+					margin: 0 15px;
+					padding: 8px 25px;
+					width: 120px;
+					@include transition(all 0.2s ease-in-out);
+					&:hover, &:active, &:focus{
+						background-color: #286090;
+						border-color: #204d74;
+						outline: none;
+						text-decoration: none;
+					}
+				}
+				.back{
+					background-color: #fff;
+					border-color: #ccc;
+					color: #333;
+					&:hover, &:active, &:focus{
+						background-color: #e6e6e6;
+						border-color: #adadad;
+					}
+				}
+			}
+		}
+		a{
+			font-family: $font-Lato;
+			font-size: 14px;
+		}
+	}
+	.registration{
+		width: 50%;
+		.new_admin{
+			.form-group{
+				.field{
+					padding: 0;
+				}
+				.actions{
+					margin-top: 25px;
+					width: 40%;
+				}
+			}
+		}
+	}
+	.edit{
+		padding-bottom: 40px;
+		.edit_admin{
+			.field{
+				text-align: left;
+				label{
+					line-height: 0.9;
+					margin-bottom: 0 !important;
+				}
+				input{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.remove{
+		margin-bottom: 40px;
+		position: relative;
+		text-align: center;
+		.remove_content{
+			background-color: #f3f3f3;
+			border: 1px solid #d1d1d1;
+			display: inline-block;
+			padding: 0 15px 20px;
+			width: 30%;
+			.title{
+				color: #333;
+				font-family: $font-LatoB;
+				font-size: 27px;
+			}
+			p{
+				font-family: $font-Lato;
+				font-size: 15px;
+			}
+			.remove_admin{
+				cursor: pointer;
+				border: none;
+				border-radius: 3px;
+				color: #fff;
+				display: inline-block;
+				font-family: $font-Lato;
+				font-size: 15px;
+				padding: 10px 25px;
+				width: 50%;
+				@include transition(all 0.2s ease-in-out);
+				&:hover, &:focus, &:active{
+					outline: none;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.home_career{
+	padding: 80px 0;
+	text-align: center;
+	.logo{
+		display: inline-block;
+		position: relative;
+		width: 140px;
+	}
+	.title{
+		color: #333;
+		font-family: $font-LatoB;
+		margin-bottom: 25px;
+	}
+	.content_info{
+		display: inline-block;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+		width: 95%;
+		.data{
+			background-color: #d1d1d1;
+			font-family: $font-LatoS;
+			font-size: 17px;
+			margin: 0;
+			.career_data{
+				display: inline-block;
+				float: left;
+				margin-top: 11px;
+				padding: 15px 25px;
+				text-align: center;
+				&.name{
+					width: 16%;
+				}
+				&.show, &.edit, &.remove{
+					width: 8%;
+				}
+				&.semester{
+					margin: 0;
+					width: 10%;
+				}
+				&.description, &.goals{
+					width: 25%;
+				}
+			}
+		}
+		.show_careers{
+			border: 1px solid #d1d1d1;
+			border-top: none;
+			margin: 0 0 20px;
+			position: relative;
+			.career_detail{
+				div{
+					display: inline-block;
+					float: left;
+					.info, .link{
+						display: block;
+						font-family: $font-LatoL;
+						font-size: 15px;
+						margin: 20px 0 0;
+						padding: 10px 15px;
+						text-transform: capitalize;
+						i{
+							font-size: 18px;
+						}
+						&:hover, &:active, &:focus{
+							outline: none;
+							text-decoration: none;
+						}
+					}
+					&.career_name{
+						width: 16%;
+					}
+					&.show_career, &.edit_career, &.remove_career{
+						width: 8%;
+					}
+					&.career_semester{
+						width: 10%;
+					}
+					&.career_description, &.career_goals{
+						width: 25%;
+						p{
+							margin-top: 0;
+							text-align: left;
+							text-transform: inherit;
+						}
+					}
+				}
+				.show_career{
+					width: 10%;
+					.link{
+						font-size: 15px;
+					}
+				}
+				.remove_career{
+					width: 10%;
+					.link{
+						font-size: 15px;
+						i{
+							color:  #ed2f2f;
+							&:hover, &:active, &:focus{
+								color: #bf3e3e;
+							}
+						}
+					}
+				}
+				&:nth-child(2n){
+					background-color: #f0f0f0;
+				}
+			}
+		}
+		.create_career{
+			background-color: #5cb85c;
+			border-radius: 3px;
+			color: #fff;
+			display: inline-block;
+			float: right;
+			font-family: $font-Lato;
+			font-size: 15px;
+			margin-top: 5px;
+			padding: 10px 35px;
+			@include transition(all 0.2s ease-in-out);
+			i{
+				margin-right: 5px;
+			}
+			&:hover, &:focus, &:active{
+				background-color: #4c954c;
+				outline: none;
+				text-decoration: none;
+			}
+		}
+	}
+}

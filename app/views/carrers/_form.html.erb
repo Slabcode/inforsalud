@@ -1,4 +1,4 @@
-<%= form_with(model: carrer, local: true) do |form| %>
+<%= form_with(model: carrer, class: 'new_career', local: true) do |form| %>
   <% if carrer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(carrer.errors.count, "error") %> prohibited this carrer from being saved:</h2>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :carrer_name %>
+    <%= form.label "Nombre" %>
+    <%= form.text_field :name, id: :carrer_name , placeholder: :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :carrer_description %>
+    <%= form.label "Descripción" %>
+    <%= form.text_area :description, id: :carrer_description, placeholder: :description, rows: "6" %>
   </div>
 
   <div class="field">
-    <%= form.label :graduated_profile %>
-    <%= form.text_area :graduated_profile, id: :carrer_graduated_profile %>
+    <%= form.label "Perfil del Egresado" %>
+    <%= form.text_area :graduated_profile, id: :carrer_graduated_profile, placeholder: :graduated_profile, rows: "6"  %>
   </div>
 
   <div class="field">
-    <%= form.label :semester_number %>
-    <%= form.number_field :semester_number, id: :carrer_semester_number %>
+    <%= form.label "Número de Semestres" %>
+    <%= form.number_field :semester_number, id: :carrer_semester_number, placeholder: :semester_number %>
   </div>
 
   <div class="field">
-    <%= form.label :objective %>
-    <%= form.text_area :objective, id: :carrer_objective %>
+    <%= form.label "Objetivos" %>
+    <%= form.text_area :objective, id: :carrer_objective, placeholder: :objective, rows: "6" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear Carrera" %>
   </div>
 <% end %>

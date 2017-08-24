@@ -1,3 +1,48 @@
-// Place all the styles related to the statics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*Importamos Fuentes, Mixins y Variables*/
+@import "fonts";
+@import "mixin";
+@import "variables";
+
+body{
+	color: #333;
+	font-family: $font-Lato;
+	font-size: 17px;
+	margin: 0;
+	padding: 10px;
+}
+
+.main{
+	position: relative;
+	h1{
+		margin-bottom: 10px;
+	}
+	.home_info{
+		.logo{
+			display: inline-block;
+			position: relative;
+			width: 140px;
+		}
+		.login_access{
+			.access{
+				border-radius: 4px;
+				display: inline-block;
+				font-family: $font-LatoS;
+				overflow: hidden;
+				position: relative;
+				.link{
+					background-color: #5cb85c;
+					color: $white;
+					display: block;
+					font-size: 15px;
+					padding: 10px 25px;
+					text-decoration: none;
+					@include transition(all 0.25s ease-in-out);
+					&:hover, &:active, &:focus{
+						background-color: #4c954c;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

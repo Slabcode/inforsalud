@@ -1,14 +1,18 @@
-<h1>Statics#index</h1>
-Esta es la vista inicial
+<%= stylesheet_link_tag 'statics', media: 'all', type:"text/css" %>
 
-
-<% if !current_admin %>
-  <%= link_to 'sign in', new_admin_session_path %>
-<% end %>
-
-
-
-<% if current_admin %>
-  <!-- true -->
-  <%= link_to 'panel de adminstrador', dashboard_path %>
-<% end %>
+<section class="main">
+	<h1>Statics#index</h1>
+	<div class="home_info">
+		<div class="login_access">
+			<div class="access">
+				<% if !current_admin %>
+				<%= link_to 'Sign in', new_admin_session_path, :class => "link" %>
+				<% end %>
+				<% if current_admin %>
+				<!-- true -->
+				<%= link_to 'Panel de adminstrador', dashboard_path, :class => "link" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

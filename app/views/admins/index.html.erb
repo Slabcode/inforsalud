@@ -1,23 +1,54 @@
-<% if notice %>
-  <%= notice %>
+<%= stylesheet_link_tag 'admins', media: 'all', type:"text/css" %>
+
+<%= link_to dashboard_path, :class=>"home" do %>
+<%= icon('home') + " " + t("administrator.home") %>
 <% end %>
-<h1><%= t("admins.index") %></h1>
-<%= link_to t("admins.new"), new_admin_path %>
 
-<% @admins.each do |a| %>
-  <p>
-    <%= t("admins.attributes.name") %>  <%= a.name %>
-    <%= t("admins.attributes.lastname") %> <%= a.lastname %>
-    <%= t("admins.attributes.username") %> <%= a.username %>
-    <%= t("admins.attributes.email") %> <%= a.email %>
-    <%= link_to t("admins.show"), a %>
-    <% if current_admin.id != a.id %>
-      <%= link_to t("admins.delete"), a, method: :delete %>
-    <% end %>
-  </p>
-<% end  %>
+<section class="home_admins">
+	<div class="logo">
+		<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+	</div>
+	<h2 class="title"><%= t("admins.index")%> </h2>
+	
+	<div class="content_info">
+		<section class="data clearfix">
+			<div class="admin_data name">Nombre</div>
+			<div class="admin_data lastname">Apellido</div>
+			<div class="admin_data username">Usuario</div>
+			<div class="admin_data email">Correo</div>
+			<div class="admin_data show">Mostrar Usuario</div>
+			<div class="admin_data remove">Borrar Usuario</div>
+		</section>
+		<section class="show_admins clearfix">
+			<% @admins.each do |a| %>
+			<div class="admin_name">
+				<p class="info"><%= a.name %></p>
+			</div>
+			<div class="admin_lastname">
+				<p class="info"><%= a.lastname %></p>
+			</div>
+			<div class="admin_username">
+				<p class="info"><%= a.username %></p>
+			</div>
+			<div class="admin_email">
+				<p class="info"><%= a.email %></p>
+			</div>
+			<div class="show_admin">
+				<p class="link"><%= link_to icon('user-circle'), a %></p>
+			</div>
+			<div class="remove_admin">
+				<% if current_admin.id != a.id %>
+				<p class="link"><%= link_to icon('user-times'), u, method: :delete, data: { confirm: 'Are you sure?'}  %></p>
+				<% end %>
+			</div>
 
-<%= link_to t("global.back"), dashboard_path  %>
+			<% end %>	
+		</section>
 
-
-<%= render 'paginate' %>
+		<%= link_to  new_admin_path, :class => "create_admin" do %>
+		<%= icon('user-plus') + " " + t("admins.new") %>
+		<% end%>
+	</div>
+	
+	<%= render 'paginate' %>	
+</section>
