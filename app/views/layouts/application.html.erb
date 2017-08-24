@@ -8,8 +8,8 @@
 
   <body>
   	<%= render partial: "shared/flash_messages", flash: flash %> 
-    <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= yield %>
     <%=javascript_include_tag "https://www.authy.com/form.authy.min.js" %>
     <%=stylesheet_link_tag "https://www.authy.com/form.authy.min.css" %>
   </body>

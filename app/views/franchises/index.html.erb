@@ -1,36 +1,57 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'franchises', media: 'all', type:"text/css" %>
 
-<h1>Franchises</h1>
+<section class="home_franchises">
+	<div class="logo">
+		<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+	</div>
+	<h2 class="title">Franquicias</h2>
+	
+	<div class="content_info">
+		<section class="data row">
+			<div class="admin_data name">Nombre</div>
+			<div class="admin_data address">Dirección</div>
+			<div class="admin_data description">Descripción</div>
+			<div class="admin_data show_careers">Ver Carreras</div>
+			<div class="admin_data asign_careers">Enlazar Carreras</div>
+			<div class="admin_data show">Ver</div>
+			<div class="admin_data edit">Editar</div>
+			<div class="admin_data remove">Eliminar</div>
+		</section>
+		<section class="show_franchises clearfix">
+			<% @franchises.each do |franchise| %>
+			<div class="franchise_name">
+				<p class="info"><%= franchise.name %></p>
+			</div>
+			<div class="franchise_address">
+				<p class="info"><%= franchise.address %></p>
+			</div>
+			<div class="franchise_description">
+				<p class="info"><%= franchise.description %></p>
+			</div>
+			<div class="franchise_show_careers">
+				<p class="info"><%= link_to 'Mostrar carreras', show_carrers_franchise_path(franchise) %></p>
+			</div>
+			<div class="franchise_asign_careers">
+				<p class="link"><%= link_to 'Enlazar carrera', link_carrer_franchise_path(franchise) %></p>
+			</div>
+			<div class="show_franchise">
+				<p class="link"><%= link_to icon('eye'), franchise %></p>
+			</div>
+			<div class="edit_franchise">
+				<p class="link"><%= link_to icon('pencil-square-o'), edit_franchise_path(franchise) %></p>
+			</div>
+			<div class="remove_admin">
+				<p class="link"><%= link_to icon('times'), franchise, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+			</div>
+			<% end %>	
+		</section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+		<%= link_to  new_franchise_path, :class => "create_franchise" do %>
+		<%= icon('building') + " Nueva Franquicia" %>
+		<% end%>
+	</div>
+	
+	<%= render 'paginate' %>	
+</section>
 
-  <tbody>
-    <% @franchises.each do |franchise| %>
-      <tr>
-        <td><%= franchise.name %></td>
-        <td><%= franchise.address %></td>
-        <td><%= franchise.description %></td>
-        <td><%= link_to 'Mostrar carreras', show_carrers_franchise_path(franchise) %></td>
-        <td><%= link_to 'Enlazar carrera', link_carrer_franchise_path(franchise) %></td>
-        <td><%= link_to 'Show', franchise %></td>
-        <td><%= link_to 'Edit', edit_franchise_path(franchise) %></td>
-        <td><%= link_to 'Destroy', franchise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= render 'paginate' %>
-
-<%= link_to 'New Franchise', new_franchise_path %>
-<%= link_to 'Dashboard', dashboard_path %>

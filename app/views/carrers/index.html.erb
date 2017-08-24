@@ -1,39 +1,57 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'carrers', media: 'all', type:"text/css" %>
 
-<h1>Carrers</h1>
+<section class="home_career">
+	<div class="logo">
+		<%= image_tag "logo_inforsalud.jpg", :class => "logo img-responsive" %>
+	</div>
+	<h2 class="title">Carreras</h2>
+	
+	<div class="content_info">
+		<section class="data row">
+			<div class="career_data name">Nombre</div>
+			<div class="career_data description">Descripción</div>
+			<div class="career_data semester">Número de Semestres</div>
+			<div class="career_data goals">Objetivos</div>
+			<div class="career_data show">Ver</div>
+			<div class="career_data edit">Editar</div>
+			<div class="career_data remove">Eliminar</div>
+		</section>
+		<section class="show_careers">
+			<% @carrers.each do |carrer| %>
+			<div class="career_detail clearfix">
+				<div class="career_name">
+					<p class="info"><%= carrer.name %></p>
+				</div>
+				<div class="career_description">
+					<p class="info"><%= carrer.description %></p>
+				</div>
+				<div class="career_semester">
+					<p class="info"><%= carrer.semester_number %></p>
+				</div>
+				<div class="career_goals">
+					<p class="info"><%= carrer.objective %></p>
+				</div>
+				<div class="show_career">
+					<p class="link"><%= link_to icon('eye'), carrer %></p>
+				</div>
+				<div class="edit_career">
+					<p class="link"><%= link_to icon('pencil-square-o'), edit_carrer_path(carrer) %></p>
+				</div>
+				<div class="remove_career">
+					<p class="link"><%= link_to icon('times'), carrer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+				</div>
+			</div>
+			<% end %>	
+		</section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Semester number</th>
-      <th>Objective</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+		<%= link_to  new_carrer_path, :class => "create_career" do %>
+		<%= icon('graduation-cap') + " Nueva Carrera" %>
+		<% end%>
+	</div>
+	
+	<%= render 'paginate' %>	
+</section>
 
-  <tbody>
-    <% @carrers.each do |carrer| %>
-      <tr>
-        <td><%= carrer.name %></td>
-        <td><%= carrer.description %></td>
-        <td><%= carrer.semester_number %></td>
-        <td><%= carrer.objective %></td>
+<%= javascript_include_tag 'careers' %>
 
-        <td><%= link_to 'Ver semestres', carrer_semesters_path(carrer) %></td>
-        <td><%= link_to 'Añadir semestre', new_carrer_semester_path(carrer) %></td>
-        <td><%= link_to 'Show', carrer %></td>
-        <td><%= link_to 'Edit', edit_carrer_path(carrer) %></td>
-        <td><%= link_to 'Destroy', carrer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= render 'paginate' %>
-
-<%= link_to 'New Carrer', new_carrer_path %>
-<%= link_to 'Dashboard', dashboard_path %>
