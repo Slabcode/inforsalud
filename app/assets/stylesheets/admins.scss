@@ -42,7 +42,7 @@ body{
 		}
 		.new_admin, .authy-form, .edit_admin{
 			margin-bottom: 20px;
-			padding: 0 12%;
+			padding: 10px 12%;
 			.form-content{
 				display: block;
 				position: relative;
@@ -58,6 +58,7 @@ body{
 				.authy-token{
 					border: 1px solid #d1d1d1;
 					display: inline-block !important;
+					font-family: $font-Lato;
 					font-size: 15px;
 					padding: 5px 10px 5px 30px !important;
 					width: 100%;
@@ -139,7 +140,7 @@ body{
 						text-decoration: none;
 					}
 				}
-				.sms{
+				#authy-request-sms-link{
 					background-color: #337ab7;
 					&:hover, &:focus, &:active{
 						background-color: #3490e0;
@@ -148,6 +149,11 @@ body{
 			}
 			.token{
 				margin-top: 25px;
+				width: 100%;
+				input, a{
+					margin: 0 2%;
+					width: 45%;
+				}
 			}
 		}
 		a{
